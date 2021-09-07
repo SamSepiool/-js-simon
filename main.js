@@ -34,29 +34,32 @@ alert('Memorizza questi numeri: ' + randomNumbers );
 
 setTimeout(
     function() {
-        var userNum;
-        while(userNumbers.length < 5){
+
+    var userNum;
+    while(userNumbers.length < 5){
         userNum = parseInt(prompt('inserisci i numeri visti in precedenza')); 
-        userNumbers.push(userNum)
-        
-        if(randomNumbers.includes(userNum)){
+
+
+        // validation
+        if(!userNumbers.includes(userNum) && !guessedNumbers.includes(userNum)){
+
+           if (randomNumbers.includes(userNum)){
             guessedNumbers.push(userNum)
-        }
+           }
+            
+           userNumbers.push(userNum)
+        } 
+        
     }
+    
+    
+
     console.log('numeri random ' + randomNumbers);
 
     console.log('numeri utente: ' + userNumbers);
     console.log('numeri indovinati: ' + guessedNumbers);
 
     alert('Ne hai indovinati ' + guessedNumbers.length + ' su 5 : ' + guessedNumbers);
-
-    }, 30000); // viene eseguita dopo 30"
-
-
- 
-
-
-
-
-
+        
+ }, 3000)
 
