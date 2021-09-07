@@ -32,8 +32,7 @@ alert('Memorizza questi numeri: ' + randomNumbers );
 
 
 
-setTimeout(
-    function() {
+setTimeout(function() {
 
     var userNum;
     while(userNumbers.length < 5){
@@ -48,7 +47,9 @@ setTimeout(
            }
             
            userNumbers.push(userNum)
-        } 
+        } else {
+            alert('numero gia inserito, riprova')
+        }
         
     }
     
